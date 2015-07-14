@@ -9,7 +9,7 @@ PyImageOptimizer
         :target: https://pypi.python.org/pypi/PyImageOptimizer
 
 
-Python Boilerplate contains all the boilerplate you need to create a Python package.
+Python Image Optimzer . Uses jpgoptimizer.com  and pngcrush.com to optimize the images. 
 
 * Free software: BSD license
 * Documentation: https://PyImageOptimizer.readthedocs.org.
@@ -18,3 +18,4 @@ Features
 --------
 
 * TODO
+    - Expose Api to resize images
