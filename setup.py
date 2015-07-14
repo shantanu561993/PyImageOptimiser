@@ -9,5 +9,4 @@ setup(
   url = 'https://github.com/shantanu561993/PyImageOptimiser', # use the URL to the github repo
   download_url = 'https://github.com/shantanu561993/PyImageOptimiser/tarball/1.0',
   keywords = ['Image', 'optimize', 'compress','image','jpeg','png','optimise','crush'], # arbitrary keywords
-  classifiers = [],
 )
