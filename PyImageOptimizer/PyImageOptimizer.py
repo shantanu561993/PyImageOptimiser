@@ -17,6 +17,7 @@ def optimize_jpg(file_path,backup=False):
 		raise Exception("file path must be a valid directory or a file path "+os.path.abspath(file_path) )
 		
 	if os.path.isfile(file_path) and os.path.getsize(file_path)>>20 < 5:
+		print (file_path)
 		if backup:
 			shutil.copyfile(file_path,file_path.rstrip(".jpg")+".backup.jpg")
 		files={'input':open(file_path,'rb')}			
@@ -60,12 +61,18 @@ def optimize_png(file_path,backup=False):
 
 
 def optimize(file_path,backup=False):
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-        for root,dirs,files in os.walk(file_path):
-            for file in files:
-                if file.endswith(".jpg"):
-                    executor.submit(optimize_jpg,file_path,backup)
-                elif file.endswith(".png"):
-                    executor.submit(optimize_png,file_path,backup)
+    if os.path.isfile(file_path):
+    	if file_path.endswith(".jpg"):
+            optimize_jpg(file_path,backup)
+        elif file_path.endswith(".png"):
+            optimize_png(file_path,backup)
+    if os.path.isdir(file_path):
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+            for root,dirs,files in os.walk(file_path):
+                for file in files:
+                    if file.endswith(".jpg"):
+                        executor.submit(optimize_jpg,file_path,backup)
+                    elif file.endswith(".png"):
+                        executor.submit(optimize_png,file_path,backup)
                                 
 																																																																																																																																																																																																																																			
