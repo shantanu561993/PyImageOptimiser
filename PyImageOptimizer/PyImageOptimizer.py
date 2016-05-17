@@ -28,9 +28,9 @@ def optimize_jpg(file_path,backup=False):
                 
         elif os.path.isdir(file_path):
             for root,dirs,files in os.walk("."):
-            for file in files:
-                if file.endswith(".jpg"):
-                     optimize_jpg(os.path.abspath(os.path.join(root,file)),backup)
+                for file in files:
+                    if file.endswith(".jpg"):
+                        optimize_jpg(os.path.abspath(os.path.join(root,file)),backup)
 
 def optimize_png(file_path,backup=False):
     if type(file_path)!=str :
@@ -53,9 +53,9 @@ def optimize_png(file_path,backup=False):
                 
         elif os.path.isdir(file_path):
             for root,dirs,files in os.walk("."):
-            for file in files:
-                if file.endswith(".png"):
-                     optimize_png(os.path.abspath(os.path.join(root,file)),backup)
+                for file in files:
+                    if file.endswith(".png"):
+                        optimize_png(os.path.abspath(os.path.join(root,file)),backup)
 
 
 
