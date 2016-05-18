@@ -1,18 +1,17 @@
 ========
 Usage
 ========
-
 To use PyImageOptimizer in a project::
 
     import PyImageOptimizer
     
 To Just optimize the JPG images::
 
-    PyImageOptizer.optimise_jpg(file_path,backup=False)
+    PyImageOptizer.optimize_jpg(file_path,backup=False)
 
 To Just optimize PNG images::
 
-    PyImageOptizer.optimise_png(file_path,backup=False)
+    PyImageOptizer.optimize_png(file_path,backup=False)
     
 To optimise both jpg and png images (regardless of type)::
 
